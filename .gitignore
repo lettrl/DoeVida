@@ -33,6 +33,9 @@ migrate_working_dir/
 /build/
 /coverage/
 
+# PowerShell cache
+/Microsoft/Windows/PowerShell/ModuleAnalysisCache
+
 # Symbolication related
 app.*.symbols
 

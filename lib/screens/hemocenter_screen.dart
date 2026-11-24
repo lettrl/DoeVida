@@ -10,17 +10,14 @@ class HemocenterScreen extends StatelessWidget {
     return ListView(
       padding: EdgeInsets.zero,
       children: [
-        // Mapa simulado
         Container(
           height: 220,
           color: const Color(0xFFE8EAE6),
           child: Stack(
             children: [
-              // Fundo de mapa estilizado
               Positioned.fill(
                 child: CustomPaint(painter: _MapPainter()),
               ),
-              // Pin central
               const Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -30,7 +27,6 @@ class HemocenterScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              // Busca no topo
               Positioned(
                 top: 12,
                 left: 16,
@@ -55,7 +51,6 @@ class HemocenterScreen extends StatelessWidget {
           ),
         ),
 
-        // Card do hemocentro
         Padding(
           padding: const EdgeInsets.all(16),
           child: AppCard(
@@ -160,7 +155,6 @@ class _InfoRow extends StatelessWidget {
   }
 }
 
-// Mapa simplificado desenhado com Canvas
 class _MapPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -168,10 +162,8 @@ class _MapPainter extends CustomPainter {
     final roadPaint = Paint()..color = Colors.white..strokeWidth = 10..strokeCap = StrokeCap.round;
     final roadPaint2 = Paint()..color = Colors.white..strokeWidth = 6..strokeCap = StrokeCap.round;
 
-    // Fundo
     canvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), Paint()..color = const Color(0xFFE8EAE6));
 
-    // Blocos de quarteirão
     for (int i = 0; i < 4; i++) {
       for (int j = 0; j < 3; j++) {
         canvas.drawRRect(
@@ -184,15 +176,12 @@ class _MapPainter extends CustomPainter {
       }
     }
 
-    // Ruas horizontais
     canvas.drawLine(Offset(0, size.height * 0.35), Offset(size.width, size.height * 0.35), roadPaint);
     canvas.drawLine(Offset(0, size.height * 0.68), Offset(size.width, size.height * 0.68), roadPaint2);
 
-    // Ruas verticais
     canvas.drawLine(Offset(size.width * 0.3, 0), Offset(size.width * 0.3, size.height), roadPaint);
     canvas.drawLine(Offset(size.width * 0.65, 0), Offset(size.width * 0.65, size.height), roadPaint2);
 
-    // Linha tracejada para o destino
     final dashPaint = Paint()
       ..color = AppColors.primary
       ..strokeWidth = 2.5

@@ -110,7 +110,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             const SizedBox(height: 16),
 
-            // Card resumo do usuário
             Center(
               child: Column(
                 children: [
@@ -162,7 +161,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             const SizedBox(height: 24),
 
             if (_editing) ...[
-              // Formulário de edição
               const Text('EDITAR INFORMAÇÕES', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: AppColors.muted)),
               const SizedBox(height: 10),
               TextField(
@@ -262,7 +260,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               const SizedBox(height: 20),
               PrimaryButton('Salvar alterações', onTap: _saveProfile),
             ] else ...[
-              // Visualização dos dados
               AppCard(
                 child: Column(
                   children: [
@@ -282,7 +279,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               const SizedBox(height: 16),
 
-              // Botões de ação rápida
               OutlinedButton.icon(
                 onPressed: () {
                   Navigator.push(

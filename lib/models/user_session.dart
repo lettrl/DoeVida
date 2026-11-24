@@ -66,7 +66,6 @@ class UserSession extends ChangeNotifier {
     weight: 62.0,
     city: 'João Pessoa',
     isMale: false,
-    // Deixando faltar cerca de 13 dias para a data prevista
     lastDonationDate: DateTime.now().subtract(const Duration(days: 77)),
     totalDonations: 3,
   );

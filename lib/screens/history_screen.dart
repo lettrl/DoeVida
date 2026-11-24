@@ -31,7 +31,6 @@ class HistoryScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
 
-            // Card próxima doação
             AppCard(
               padding: const EdgeInsets.all(16),
               child: Column(
@@ -61,7 +60,6 @@ class HistoryScreen extends StatelessWidget {
             ),
             const SizedBox(height: 10),
 
-            // Botão Doe hoje com ação funcional
             ElevatedButton.icon(
               onPressed: () {
                 UserSession.instance.registerDonation();
@@ -91,7 +89,6 @@ class HistoryScreen extends StatelessWidget {
             ),
             const SizedBox(height: 10),
 
-            // Lista de doações
             _DonationItem(
               date: '${profile.lastDonationDate.day} ${_mesesAbrev[profile.lastDonationDate.month]} ${profile.lastDonationDate.year}',
               local: 'Hemocentro da Paraíba',

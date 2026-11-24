@@ -27,7 +27,6 @@ class AlertScreen extends StatelessWidget {
           ),
           const SizedBox(height: 24),
 
-          // Card urgente
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
@@ -93,7 +92,6 @@ class AlertScreen extends StatelessWidget {
 
           const SizedBox(height: 12),
 
-          // Card lembrete
           AppCard(
             child: Row(
               children: [

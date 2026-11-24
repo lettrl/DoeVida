@@ -42,7 +42,6 @@ class HomeScreen extends StatelessWidget {
             Text(profile.city, style: Theme.of(context).textTheme.titleLarge),
             const SizedBox(height: 12),
 
-            // Card contador
             Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
@@ -101,7 +100,6 @@ class HomeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 12),
 
-            // Ações rápidas
             Row(
               children: [
                 Expanded(

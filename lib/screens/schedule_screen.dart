@@ -10,7 +10,6 @@ class ScheduleScreen extends StatefulWidget {
 }
 
 class _ScheduleScreenState extends State<ScheduleScreen> {
-  // Semana atual (sáb 28 nov 2026 em diante)
   final List<_DaySlot> _days = [
     _DaySlot('SÁB', '28'),
     _DaySlot('SEG', '30'),
@@ -19,14 +18,12 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
     _DaySlot('QUI', '3'),
   ];
 
-  // Horários disponíveis para o sábado
   final List<String> _horarios = [
     '08:00', '08:30', '09:00',
     '09:30', '10:00', '10:30',
     '11:00', '11:30', '12:00',
   ];
 
-  // Horários ocupados (simulados)
   final Set<String> _ocupados = {'09:30', '10:00'};
 
   int _selectedDay = 0;
@@ -55,7 +52,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
         const Text('Novembro 2026', style: TextStyle(color: AppColors.muted, fontSize: 13)),
         const SizedBox(height: 16),
 
-        // Seletor de dias
         SizedBox(
           height: 70,
           child: ListView.separated(
@@ -118,7 +114,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
         ),
         const SizedBox(height: 10),
 
-        // Grid de horários
         GridView.count(
           crossAxisCount: 3,
           shrinkWrap: true,
@@ -164,7 +159,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
 
         const SizedBox(height: 16),
 
-        // Card de agendado
         if (_agendado && _horarioAgendado != null) ...[
           Container(
             padding: const EdgeInsets.all(14),
@@ -218,7 +212,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
           const SizedBox(height: 10),
         ],
 
-        // Botão confirmar
         PrimaryButton(
           'Confirmar agendamento',
           icon: Icons.check,
